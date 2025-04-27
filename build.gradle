@@ -82,3 +82,16 @@ publishing {
 		// retrieving dependencies.
 	}
 }
+
+sourceSets {
+	client {
+		compileClasspath += sourceSets.main.output
+		runtimeClasspath += sourceSets.main.output
+		java {
+			srcDirs = ['src/client/java']  // Chemin vers le code client
+		}
+		resources {
+			srcDirs = ['src/client/resources']  // Chemin vers les assets client
+		}
+	}
+}

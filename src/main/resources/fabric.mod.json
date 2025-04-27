@@ -25,6 +25,9 @@
 	"mixins": [
 		"emberofnether.mixins.json"
 	],
+	"client": [
+		"/src/client/java/com.emberofnether.EmberOfNetherClient"
+	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.20",
