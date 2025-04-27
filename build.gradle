@@ -24,6 +24,22 @@ fabricApi {
 	}
 }
 
+sourceSets {
+	client {
+		compileClasspath += sourceSets.main.output
+		runtimeClasspath += sourceSets.main.output
+	}
+}
+
+loom {
+	runs {
+		client {
+			client()
+			source(sourceSets.client)
+		}
+	}
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -32,6 +48,10 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	// Rajout pour le client
+	clientImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	clientImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	
 }
 
@@ -83,15 +103,3 @@ publishing {
 	}
 }
 
-sourceSets {
-	client {
-		compileClasspath += sourceSets.main.output
-		runtimeClasspath += sourceSets.main.output
-		java {
-			srcDirs = ['src/client/java']  // Chemin vers le code client
-		}
-		resources {
-			srcDirs = ['src/client/resources']  // Chemin vers les assets client
-		}
-	}
-}
