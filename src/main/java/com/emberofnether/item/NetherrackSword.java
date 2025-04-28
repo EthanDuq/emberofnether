@@ -2,12 +2,9 @@ package com.emberofnether.item;
 
 import com.emberofnether.materials.ModToolMaterials;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 
 public class NetherrackSword extends SwordItem {
 

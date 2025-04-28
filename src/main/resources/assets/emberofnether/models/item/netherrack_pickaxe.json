@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "emberofnether:item/netherrack_sword"
+    "layer0": "emberofnether:item/netherrack_pickaxe"
   }
 }
